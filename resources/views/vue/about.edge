@@ -1,0 +1,40 @@
+@layout('layout')
+
+@section('body')
+
+  <h2>Liste de tous les films</h2>
+
+  @if(flashMessages.has('success'))
+    <div class="alert alert-success">
+      {{flashMessages.get('success')}}
+    </div>
+  @endif
+
+  @if(flashMessages.has('error'))
+  <div class="alert alert-danger">
+    {{flashMessages.get('error')}}
+  </div>
+  @endif
+
+  @each(film in films)
+
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+        {{ film.titre }}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ film.auteur }}</h5>
+        <p class="card-text">{{ film.description }}</p>
+        <a href="/getUpdate/{{ film.id }}" class="btn btn-primary">Modifier</a>
+        <a href="/delete/{{film.id}}" class="btn btn-primary">Supprimer</a>
+      </div>
+      <div class="card-footer text-muted">
+        Film
+      </div>
+    </div>
+  </div>
+  @endeach
+
+@endsection
+
