@@ -2,7 +2,7 @@
 
 @section('body')
 
-  <h2>Liste de tous les films</h2>
+  <h2 class="titre">Liste de tous les films</h2>
 
   @if(flashMessages.has('success'))
     <div class="alert alert-success">
@@ -18,16 +18,18 @@
 
   @each(film in films)
 
-  <div class="container">
+  <div class="container largeur">
     <div class="card text-center">
       <div class="card-header">
         {{ film.titre }}
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{ film.auteur }}</h5>
-        <p class="card-text">{{ film.description }}</p>
+        <h5 class="card-title">Auteur : {{ film.auteur }}</h5>
+        <p class="card-text">Genre : {{ film.genre }}</p>
+        <p class="card-text">Description : {{ film.description }}</p>
         <a href="/getUpdate/{{ film.id }}" class="btn btn-primary">Modifier</a>
         <a href="/delete/{{film.id}}" class="btn btn-primary">Supprimer</a>
+        
       </div>
       <div class="card-footer text-muted">
         Film

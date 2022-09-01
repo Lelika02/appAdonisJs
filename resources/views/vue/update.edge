@@ -2,22 +2,36 @@
 
 @section('body')
 
-  <h2>Modification d'un film</h2>
+  <h2 class="titre">Modification d'un film</h2>
 
-  <form action="/postUpdate/{{film.id}}" method="post" enctype="multipart/form-data">
-      <label class="form-label">Titre</label>
-      <input type="text" class="form-control" id="titre" name="titre" value="{{ film.titre }}">
+  <div class="container largeur-form">
 
-      <label class="form-label">Genre</label>
-      <input type="text" class="form-control" id="genre" name="genre" value="{{ film.genre }}">
+    <form action="/postUpdate/{{film.id}}" method="post" enctype="multipart/form-data">
+      
+      <div class="mb-3">
+        <label class="form-label bold">Titre</label>
+        <input type="text" class="form-control" id="titre" name="titre" value="{{ film.titre }}">
+      </div>
 
-      <label class="form-label">Description</label>
-      <input type="text" class="form-control" id="description" name="description" value="{{ film.description }}">
+      <div class="mb-3">
+        <label class="form-label bold">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" value="{{ film.genre }}">
+      </div>
 
-      <label class="form-label">Auteur</label>
-      <input type="text" class="form-control" id="auteur" name="auteur" value="{{ film.auteur }}">
+      <div class="mb-3">
+        <label class="form-label bold">Description</label>
+        <input type="text" class="form-control" id="description" name="description" value="{{ film.description }}">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label bold">Auteur</label>
+        <input type="text" class="form-control" id="auteur" name="auteur" value="{{ film.auteur }}">
+      </div>
 
       <button type="submit" class="btn btn-primary">Modifier</button>
-  </form>
+    
+    </form>
+
+  </div>
 
 @endsection
