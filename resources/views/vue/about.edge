@@ -24,12 +24,13 @@
         {{ film.titre }}
       </div>
       <div class="card-body">
-        <h5 class="card-title">Auteur : {{ film.auteur }}</h5>
+        <p class="card-title">Auteur : {{ film.auteur }}</p>
         <p class="card-text">Genre : {{ film.genre }}</p>
         <p class="card-text">Description : {{ film.description }}</p>
-        <a href="/getUpdate/{{ film.id }}" class="btn btn-primary">Modifier</a>
-        <a href="/delete/{{film.id}}" class="btn btn-primary">Supprimer</a>
-        
+        @if(auth.isLoggedIn)
+          <a href="/getUpdate/{{ film.id }}" class="btn btn-primary">Modifier</a>
+          <a href="/delete/{{film.id}}" class="btn btn-primary">Supprimer</a>
+        @endif          
       </div>
       <div class="card-footer text-muted">
         Film

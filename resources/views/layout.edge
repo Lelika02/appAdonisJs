@@ -15,17 +15,19 @@
           <li class="nav-item active">
             <a class="nav-link text-white lien" href="/">Accueil</a>
           </li>
-          @if(auth.user)
-          <li class="nav-item">
-            <a class="nav-link text-white lien" href="/getCreate">Ajouter un film</a>
-          </li>
-          @endif
-          
+          @if(auth.isLoggedIn)
+            <li class="nav-item">
+              <a class="nav-link text-white lien" href="/getCreate">Ajouter un film</a>
+            </li>
+          @endif          
           <li class="nav-item">
             <a class="nav-link text-white lien" href="/getInscription">S'enregistrer</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white lien" href="/getLogin">Se connecter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white lien" href="/logout">Se déconnecter</a>
           </li>
         </ul>
        

@@ -20,6 +20,7 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+
 Route.group(() => {
     Route.get('/getCreate', 'FilmsController.getCreate').as('create');
     Route.post('/postCreate', 'FilmsController.postCreate');
@@ -33,3 +34,4 @@ Route.get('/getLogin', 'SecurityController.getLogin').as('login');
 Route.post('/postLogin', 'SecurityController.postLogin');
 Route.get('/getInscription', 'SecurityController.getInscription').as('inscription');
 Route.post('/postInscription', 'SecurityController.postInscription');
+Route.get('/logout', 'SecurityController.logout').as('logout');

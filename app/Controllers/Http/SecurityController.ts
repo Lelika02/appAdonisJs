@@ -3,7 +3,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Film from 'App/Models/Film'
 import User from 'App/Models/User';
 
-export default class FilmsController {
+export default class SecurityController {
 
     async getLogin({view}: HttpContextContract){
         return view.render('vue/login');
@@ -21,6 +21,11 @@ export default class FilmsController {
             session.flash({error: "Identifiant incorrect"})
             response.redirect().toRoute('login')
        }
+    }
+
+    async logout({auth, response}: HttpContextContract){
+        await auth.use('web').logout()
+        response.redirect().toRoute('login')
     }
 
     async getInscription({view}: HttpContextContract){

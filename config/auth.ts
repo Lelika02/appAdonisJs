@@ -7,6 +7,7 @@
 
 import { AuthConfig } from '@ioc:Adonis/Addons/Auth'
 
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Mapping
@@ -82,5 +83,6 @@ const authConfig: AuthConfig = {
     },
   },
 }
+
 
 export default authConfig
