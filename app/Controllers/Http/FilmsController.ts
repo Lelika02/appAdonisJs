@@ -1,4 +1,3 @@
-import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Film from 'App/Models/Film'
 
@@ -42,7 +41,7 @@ export default class FilmsController {
         return response.redirect().toRoute('home');
     }
 
-    async delete({params, view, response, session}: HttpContextContract){
+    async delete({params, response, session}: HttpContextContract){
         const film = await Film.findOrFail(params.id);
         await film.delete();
         session.flash({success: "Le film a bien été supprimé"})

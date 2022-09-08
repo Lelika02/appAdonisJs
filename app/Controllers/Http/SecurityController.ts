@@ -1,6 +1,4 @@
-import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Film from 'App/Models/Film'
 import User from 'App/Models/User';
 
 export default class SecurityController {
